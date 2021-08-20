@@ -1,0 +1,25 @@
+{:source-paths ["src"]
+
+ :dependencies [[re-frame "1.1.2"]
+                [reagent "1.0.0"]
+
+                ;; for connecting cider
+                [nrepl "0.8.0"]
+                [refactor-nrepl "2.4.0"]
+                [cider/cider-nrepl "0.25.3"]
+                ]
+
+ :http {:port 3445
+        :host "0.0.0.0"}
+
+ :builds {:app {:target     :browser
+                :output-dir       "resources/public/js"
+                :asset-path       "/js"                
+                :js-options {:js-package-dirs ["node_modules"]}
+                :modules {:main {:entries [volley.main]}}
+                :devtools {:http-root   "resources/public"
+                           :http-port 8888}
+                :release {:compiler-options {:warnings-as-errors true
+                                             :infer-externs      :auto
+                                             :optimizations      :advanced}}}}}
+

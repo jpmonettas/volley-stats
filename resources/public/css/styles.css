@@ -1,0 +1,87 @@
+html,body,#app,.main {
+	height: 99%;
+}
+body {
+	font-size: 18px;    
+}
+.players {
+	display: grid;
+	grid-template-columns: repeat(5,1fr)
+}
+
+.player {
+	border: 1px solid grey;
+	text-align: center;
+	padding: 10px;    
+}
+
+.player.selected {
+	border: 3px solid #00ff00 
+}
+
+.actions {
+	display: grid;
+	grid-template-areas:
+		"saque-errado  saque-errado saque-punto saque-punto"
+		"pase-pp       pase-p       pase-n      pase-nn"
+		"ataque-punto  ataque-punto bloqueo     bloqueo"
+}
+
+.download{
+	width: 100%;
+	background-color: #ca70ff;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	text-align:center;
+    display: flex;
+}
+
+.main {
+	display: grid;
+	grid-template-rows: 30% 60% 10% 
+}
+
+.counter {
+	font-weight: bold;
+	color: red;
+}
+
+.action {
+    justify-content: center;
+	align-items: center;
+	text-align:center;
+	background-color: #eee;
+    display: flex;
+	border: 1px solid grey;
+	font-size: 14px;
+			
+}
+
+.animate {
+  -webkit-animation-name: flash;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+		background-color: yellow;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+.unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
